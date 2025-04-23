@@ -163,8 +163,8 @@ export default function OursTokenApp() {
         </div>
 
           {/* Exchange Selection Header */}
-      <div className="flex items-center p-2 space-x-2 overflow-x-auto">
-      <div className="flex items-center rounded-full px-3 py-1">
+          <div className="flex items-center p-2 space-x-2 overflow-x-auto">
+        <div className="flex items-center rounded-full px-3 py-1">
           <div className="h-6 w-6 rounded-full mr-2"><img src="pinksale.png" alt="" /></div>
           <span className="text-sm">Pinksale</span>
         </div>
@@ -183,71 +183,42 @@ export default function OursTokenApp() {
         {/* Market Stats Cards */}
         <div className="w-full max-w-md mb-6">
           {/* First Card - Market Cap */}
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 mb-4 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-yellow-500/20 to-transparent"></div>
+          <div className="bg-black rounded-xl p-4 mb-4 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full "><img src="marketcap.jpg" alt="" /></div>
             
             {/* Chart Icon and Graph Line */}
             <div className="flex justify-between items-start mb-12">
-              <div className="flex items-center bg-gray-700 rounded-full p-2">
-                <svg className="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M4 4v16h16" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M4 16l4-4 4 4 8-8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+              <div className="flex items-center rounded-full p-2">
+                <img src="marketcap.png" alt="" />
               </div>
-              
-              <div className="relative h-16 w-2/3">
-                <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 40" preserveAspectRatio="none">
-                  <path d="M0,40 L10,35 L20,38 L30,30 L40,32 L50,25 L60,28 L70,20 L80,22 L90,15 L100,10" 
-                    stroke="#8B8B8B" 
-                    strokeWidth="2" 
-                    fill="none" />
-                </svg>
-                
-                {/* Up Arrow */}
-                <svg className="absolute right-0 top-0 h-8 w-8 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M5 15l7-7 7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
+             
             </div>
-            
-            <div>
-              <p className="text-gray-400 text-sm mb-1">Marketcap</p>
-              <p className="text-white text-2xl font-bold">$10,452,761</p>
-            </div>
+           
           </div>
           
-          {/* Second Card - Partial View */}
-          <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-4 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-yellow-500/20 to-transparent"></div>
-            
-            {/* Icons */}
+          {/* Second Card -  */}
+          <div className="bg-black rounded-xl p-4 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full "></div>
             <div className="flex justify-between mb-4">
-              <div className="flex items-center bg-gray-700 rounded-full p-2">
-                <svg className="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M20 17a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2m14 0v3H6v-3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 15c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M10 8a2 2 0 1 1 4 0c0 1.5-2 2.5-2 4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              
-              <div className="flex items-center bg-gray-700 rounded-full p-2">
-                <svg className="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
+              <img src="holders.png" alt="" />
             </div>
             
-            {/* Just showing the beginning of stats as per the image */}
-            <div className="flex justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">Volume 24h</p>
-                <p className="text-white font-bold">$892,122</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Price</p>
-                <p className="text-white font-bold">$0.00652</p>
-              </div>
+          </div>
+          {/* third Card -  */}
+          <div className="bg-black rounded-xl p-4 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full "></div>
+            <div className="flex justify-between mb-4">
+              <img src="liquidity.png" alt="" />
+              
             </div>
+          </div>
+          {/* Fourth Card -  */}
+          <div className="bg-black rounded-xl p-4 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full "></div>
+            <div className="flex justify-between mb-4">
+              <img src="perfeection.png" alt="" />
+            </div>
+            
           </div>
         </div>
 
