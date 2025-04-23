@@ -1,0 +1,175 @@
+import { useState, useEffect } from 'react';
+
+export default function OursTokenApp() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  
+  // State for partners that will scroll horizontally
+  const [partners, setPartners] = useState([
+    { id: 1, name: 'Binmart', color: '#3498db' },
+    { id: 2, name: 'Coinpecko', color: '#2ecc71' },
+    { id: 3, name: 'Exchange', color: '#e74c3c' },
+    { id: 4, name: 'Partner4', color: '#9b59b6' },
+    { id: 5, name: 'Partner5', color: '#f1c40f' },
+  ]);
+
+  // Effect to handle continuous scrolling
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPartners(prevPartners => {
+        const firstPartner = prevPartners[0];
+        return [...prevPartners.slice(1), firstPartner];
+      });
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex flex-col w-full h-screen bg-black text-white overflow-hidden relative">
+      {/* Header */}
+      <header className="flex justify-between items-center p-4 border-b border-gray-800 z-20">
+        <div className="flex items-center">
+          <div className="h-6 w-6 rounded-full bg-yellow-500 mr-2"></div>
+          <span className="font-bold">$OURS</span>
+        </div>
+        <button className="text-white" onClick={() => setIsNavOpen(!isNavOpen)}>
+          <div className="flex flex-col space-y-1">
+            <div className="w-5 h-0.5 bg-white"></div>
+            <div className="w-5 h-0.5 bg-white"></div>
+            <div className="w-5 h-0.5 bg-white"></div>
+          </div>
+        </button>
+      </header>
+
+      {/* Navigation Sidebar */}
+      {isNavOpen && (
+        <div className="fixed inset-0 bg-black z-30 flex flex-col">
+          <div className="flex justify-between p-4">
+            <div className="h-8 w-8 rounded-full bg-gray-500"></div>
+            <button onClick={() => setIsNavOpen(false)} className="text-white text-2xl">
+              ×
+            </button>
+          </div>
+          
+          <nav className="flex-1 flex flex-col px-4 py-8 space-y-6">
+            <a href="#" className="text-center py-2">Home</a>
+            <a href="#" className="text-center py-2">Tokenomics</a>
+            <a href="#" className="text-center py-2">Reflections</a>
+            <a href="#" className="text-center py-2">DAO Governance</a>
+            <a href="#" className="text-center py-2">Community</a>
+            
+            <div className="mt-8 space-y-4 px-4">
+              <button className="bg-yellow-500 text-black font-bold py-3 px-6 rounded-lg w-full flex items-center justify-center">
+                <div className="h-4 w-4 rounded-full bg-yellow-600 mr-2"></div>
+                Buy $OURS
+              </button>
+              
+              <button className="bg-transparent border border-gray-700 text-white py-3 px-6 rounded-lg w-full flex items-center justify-center">
+                <svg className="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M8 18L5 18L5 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M5 15L10 10L14 14L19 9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                View Chart
+              </button>
+            </div>
+          </nav>
+          
+          <div className="p-4">
+            <div className="flex justify-center space-x-6 mb-4">
+              <a href="#" className="text-yellow-500">
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                  <path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z"/>
+                </svg>
+              </a>
+              <a href="#" className="text-white">
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H13v7h-3v-7H8v-2h2V7.692C10 5.923 10.931 5 13.029 5H15v3z"/>
+                </svg>
+              </a>
+              <a href="#" className="text-white">
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </a>
+            </div>
+            <p className="text-gray-500 text-xs text-center">Copyright © 2025 $OURS. All Rights Reserved.</p>
+          </div>
+        </div>
+      )}
+
+      {/* Main Content */}
+      <main className="flex-1 flex flex-col items-center p-6 relative">
+        {/* Status Bar */}
+        <div className="w-full text-xs text-gray-400 mb-8 text-center">
+          Find $OURS on DEX | <span className="text-yellow-500">Read more →</span>
+        </div>
+
+        {/* Token Name and Tagline */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold mb-1">$OURS</h1>
+          <p className="text-gray-300">Not yours. Not mine. OURS</p>
+        </div>
+
+        {/* Buy Button */}
+        <button className="bg-yellow-500 text-black font-bold py-3 px-6 rounded-lg mb-4 w-full max-w-xs flex items-center justify-center">
+          <div className="h-4 w-4 rounded-full bg-yellow-600 mr-2"></div>
+          Buy $OURS
+        </button>
+
+        {/* Chart Button */}
+        <button className="bg-transparent border border-gray-700 text-white py-3 px-6 rounded-lg mb-12 w-full max-w-xs flex items-center justify-center">
+          <svg className="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M8 18L5 18L5 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M5 15L10 10L14 14L19 9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          View Chart
+        </button>
+
+        {/* Rotating Coin */}
+        <div className="animate-spin-slow w-40 h-40 bg-yellow-500 rounded-full relative mb-12 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-32 h-32 rounded-full bg-yellow-600 flex items-center justify-center">
+              <div className="flex">
+                {/* Simplified hand stack */}
+                <div className="w-4 h-6 bg-amber-800 rotate-45 translate-x-1"></div>
+                <div className="w-4 h-6 bg-amber-700 -rotate-12"></div>
+                <div className="w-4 h-6 bg-amber-900 rotate-25 -translate-x-1"></div>
+                <div className="w-4 h-6 bg-amber-600 -rotate-45 -translate-x-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scrolling Partners */}
+        <div className="absolute bottom-6 w-full overflow-hidden">
+          <div className="flex space-x-4 px-4">
+            {partners.map(partner => (
+              <div 
+                key={partner.id} 
+                className="flex items-center justify-center w-12 h-12 rounded-full" 
+                style={{backgroundColor: partner.color}}
+              >
+                {partner.name.charAt(0)}
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+
+      <style jsx>{`
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        .animate-spin-slow {
+          animation: spin 10s linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+}
