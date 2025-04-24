@@ -1,7 +1,7 @@
 
-
+import HodlDashboard from './earning.jsx';
 import { useState, useEffect } from 'react';
-import Tokenomics from './tokenomics.jsx'; 
+import Tokenomics from './tokenomics.jsx';
 
 export default function OursTokenApp() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -300,26 +300,8 @@ export default function OursTokenApp() {
           <div id="tokenomics"><Tokenomics /></div>
           
           {/* Roadmap Section */}
-          <div id="roadmap" className="w-full max-w-md my-16">
-            <h2 className="text-2xl font-bold mb-6">Roadmap</h2>
-            {/* Add your roadmap content here */}
-            <div className="space-y-8">
-              <div className="relative pl-8 border-l-2 border-yellow-500">
-                <div className="absolute left-[-8px] top-0 w-4 h-4 bg-yellow-500 rounded-full"></div>
-                <h3 className="text-xl font-semibold text-yellow-500">Phase 1</h3>
-                <p className="text-gray-300 mt-2">Launch, community building, initial exchange listings</p>
-              </div>
-              <div className="relative pl-8 border-l-2 border-gray-700">
-                <div className="absolute left-[-8px] top-0 w-4 h-4 bg-gray-700 rounded-full"></div>
-                <h3 className="text-xl font-semibold">Phase 2</h3>
-                <p className="text-gray-300 mt-2">Ecosystem expansion, partnerships, enhanced tokenomics</p>
-              </div>
-              <div className="relative pl-8 border-l-2 border-gray-700">
-                <div className="absolute left-[-8px] top-0 w-4 h-4 bg-gray-700 rounded-full"></div>
-                <h3 className="text-xl font-semibold">Phase 3</h3>
-                <p className="text-gray-300 mt-2">DAO governance, global adoption, major exchange listings</p>
-              </div>
-            </div>
+          <div id="roadmap" className="w-full max-w-md my-16 bg-gray-900 rounded-xl p-6">
+            <HodlDashboard />
           </div>
        
           {/* Add this before the closing </main> tag */}
