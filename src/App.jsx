@@ -376,14 +376,14 @@ export default function OursTokenApp() {
         </div>
        
         <footer className="w-full max-w-md mt-16 flex flex-col items-center">
-          {/* X logo (as seen in screenshot) */}
+          {/* X logo  */}
           <div className="mb-8 flex justify-center">
             <div className="h-12 w-12 rounded-full bg-gray-800 flex items-center justify-center">
              <img src="navbarlogo.png" alt="" />
             </div>
           </div>
           
-          {/* Navigation Links (matching screenshot) */}
+          {/* Navigation Links  */}
           <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-center mb-8">
             <a 
               href="#home" 
@@ -422,7 +422,7 @@ export default function OursTokenApp() {
             </a>
           </div>
           
-          {/* Whitepaper button */}
+          {/* Whitepaper button
           <a 
             href="#whitepaper" 
             className={`text-yellow-500 font-semibold mb-12 ${activeNav === 'Whitepaper' ? 'underline' : ''}`}
@@ -430,7 +430,8 @@ export default function OursTokenApp() {
           >
             Whitepaper
           </a>
-          
+           */}
+           
           {/* Copyright */}
           <div className="text-xs text-gray-600 mb-4">
             <p>Copyright © 2025 $OURS. All Rights Reserved.</p>
