@@ -67,8 +67,8 @@ export default function HodlDashboard() {
   return (
     <div className="flex flex-col max-w-md mx-auto bg-black">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 border-b-1-solid ">
-            <div className="flex items-center bg-black rounded-[25px] border-black border-2">
+      <header className="flex items-center justify-between p-4 border-b-1-solid">
+            <div className="flex items-center bg-black rounded-[25px] border border-2">
             <span className="text-sm font-medium">Reflections Dashboard</span>
             <span className="text-sm font-bold font-12 p-1 ">scroll</span>
             <span className="text-gray-400"><ChevronDownIcon /></span>
@@ -88,16 +88,14 @@ export default function HodlDashboard() {
         </div>
 
         {/* Coin Image Section */}
-        <div className="flex justify-center my-3">
-         <div className="">
-          <img 
-            src="earning.png" 
-            alt="OURS Coin with hands together" 
-            className="w-68 h-68 z-10"
-          />
-           </div>
+        <div className="flex justify-center my-3 relative">
+            <div className="absolute w-52 h-52 bg-yellow-250  blur-xl rounded-filled z-0"></div>
+            <img 
+                src="earning.png" 
+                alt="OURS Coin" 
+                className="w-68 h-68 z-10 relative"
+            />
         </div>
-
         {/* Info text */}
         <div className="text-center mb-6">
           <p className="text-xs text-gray-500">

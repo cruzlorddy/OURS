@@ -300,7 +300,7 @@ export default function OursTokenApp() {
           <div id="tokenomics"><Tokenomics /></div>
           
           {/* Roadmap Section */}
-          <div id="roadmap" className="w-full max-w-md my-16 bg-gray-900 rounded-xl p-6">
+          <div id="roadmap" className=" max-w-md my-16 rounded-xl ">
             <HodlDashboard />
           </div>
        
